@@ -14,7 +14,7 @@ DATE="$(date +"%B %-d, %Y")"
 
 function generate_www () {
   rm -rf -- "${WWW_DIR}" && mkdir -p -- "${WWW_DIR}" || exit 1
-  PDF_TARGETS=(exercise_solutions)
+  PDF_TARGETS=(hott-online hott-ebook hott-letter hott-a4 errata exercise_solutions)
   for TARGET in "${PDF_TARGETS[@]}"; do
       echo "::group::Generating ${WWW_DIR}/$TARGET-$VERSION.pdf"
       if [ ! -f "$TARGET.pdf" ]; then
