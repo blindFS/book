@@ -39,6 +39,12 @@ jobs:
       - name: Generate nightlies
         run: ./generate-nightlies "./_www_dir/" "./_wiki_dir/"
 
+      - name: Upload solution pdf as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: exercise-solutions.pdf
+          path: ./_www_dir/exercise_solutions-*.pdf
+
       - name: Check if errata.tex is clean
         # Interrupt the uploading if errata.tex somehow is not clean.
         # This should not happen, but it does not hurt to check.
